@@ -137,7 +137,7 @@ class RentalCarResourceTest {
         mockMvc.perform(put("/rent-cars-api/rental-cars/{id}", 1)
                         .contentType(APPLICATION_JSON_VALUE)
                         .content(readResource(rentalCarRequest)))
-                .andExpect(status().isCreated())
+                .andExpect(status().isOk())
                 .andExpect(content().json(readResource(rentalCar)));
 
         verify(rentalCarDtoMapper).mapToEntity(rentalCarRequestDto);
@@ -158,7 +158,7 @@ class RentalCarResourceTest {
         mockMvc.perform(put("/rent-cars-api/rental-cars/" + 2)
                         .contentType(APPLICATION_JSON_VALUE)
                         .content(readResource(rentalCarRequest)))
-                .andExpect(status().isCreated())
+                .andExpect(status().isOk())
                 .andExpect(content().json(readResource(rentalCar)));
 
         verify(rentalCarDtoMapper).mapToEntity(rentalCarRequestDto);

@@ -53,7 +53,6 @@ public class RentalCarResource {
     }
 
     @PutMapping("/rental-cars/{id}")
-    @ResponseStatus(CREATED)
     public RentalCarResponseDto createOrUpdateRentalCar(@Valid @RequestBody RentalCarRequestDto rentalCarRequestDto, @Valid @PathVariable Integer id) {
         Optional<RentalCarEntity> opEntity = rentalCarRepository.findById(id);
         RentalCarEntity entity = null;
